@@ -1,0 +1,147 @@
+/* iMyBook - style for both pages */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1b2a41;
+  background: #e9eef4;
+}
+
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; margin: 0 0 8px 0; }
+h2 { font-size: 22px; }
+h3 { font-size: 17px; margin-top: 14px; }
+p { margin: 4px 0; }
+
+.hidden { display: none !important; }
+.hint { color: #5b6b80; font-size: 13px; }
+
+/* ----- top bar ----- */
+.topbar {
+  background: #1b2a41;
+  color: white;
+  padding: 14px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo { font-size: 28px; margin: 0; letter-spacing: 1px; }
+.topbar nav a {
+  color: #c9d6e6;
+  text-decoration: none;
+  margin-left: 22px;
+  padding: 6px 2px;
+  font-size: 16px;
+}
+.topbar nav a:hover { color: white; }
+.topbar nav a.active { color: white; border-bottom: 3px solid #e9b44c; }
+
+/* the coloured stripes under the top bar look like book spines */
+.spines {
+  height: 8px;
+  background: repeating-linear-gradient(90deg,
+    #0f8b8d 0 40px, #e9b44c 40px 56px, #b5483a 56px 96px, #3d5a80 96px 112px);
+}
+
+main { max-width: 1000px; margin: 0 auto; padding: 22px; }
+
+/* ----- cards and forms ----- */
+.card {
+  background: white;
+  border: 1px solid #cfd9e5;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+label { display: block; font-weight: 600; font-size: 13px; margin: 8px 0 3px 0; }
+input, select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #aebbd0;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: inherit;
+}
+input:focus, select:focus, button:focus { outline: 3px solid #9ad3d4; }
+
+.form-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin-bottom: 8px; }
+.form-row > div { min-width: 140px; }
+.form-row > .grow { flex: 1; min-width: 200px; }
+
+/* ----- buttons ----- */
+.btn {
+  padding: 9px 16px;
+  border: 1px solid #1b2a41;
+  background: white;
+  color: #1b2a41;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 6px 6px 0 0;
+}
+.btn:hover { background: #dde6f0; }
+.btn.primary { background: #0f8b8d; border-color: #0f8b8d; color: white; }
+.btn.primary:hover { background: #0b6f71; }
+.btn.danger { background: #b5483a; border-color: #b5483a; color: white; }
+.btn.danger:hover { background: #8f362b; }
+.btn.small { padding: 5px 12px; font-size: 13px; }
+
+/* ----- messages ----- */
+.message { padding: 9px 12px; border-radius: 5px; margin-top: 10px; font-size: 14px; }
+.message.success { background: #dff3e4; color: #1d5a2e; border: 1px solid #a8d8b5; }
+.message.error { background: #fbe4e1; color: #8a2a1d; border: 1px solid #efb3aa; }
+.message.info { background: #e3eefb; color: #1f4a80; border: 1px solid #b4cdee; }
+.warning { color: #8a2a1d; font-weight: 600; }
+
+/* ----- search results ----- */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.book-card {
+  background: white;
+  border: 1px solid #cfd9e5;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+.book-card h3 { font-size: 15px; margin-top: 8px; }
+.cover { width: 110px; height: 160px; object-fit: cover; border-radius: 3px; border: 1px solid #aebbd0; }
+.no-cover {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #dde6f0; color: #5b6b80; font-size: 13px;
+}
+
+.suggest-item { border-left: 5px solid #e9b44c; background: #f6f9fc; padding: 6px 12px; margin-bottom: 10px; }
+.suggest-item h3 { margin-top: 4px; }
+
+/* ----- detail panel ----- */
+.detail-top { display: flex; gap: 18px; align-items: flex-start; }
+.result { background: #f6f9fc; border-left: 5px solid #0f8b8d; padding: 8px 14px; margin: 8px 0; }
+
+/* ----- my reading list ----- */
+.stats { background: #1b2a41; color: white; padding: 10px 14px; border-radius: 5px; margin-bottom: 12px; }
+.list-card {
+  border: 1px solid #cfd9e5;
+  border-left: 6px solid #3d5a80;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  background: #fcfdfe;
+}
+.list-card.editing { border-left-color: #e9b44c; background: #fffaf0; }
+.empty { color: #5b6b80; padding: 14px 0; }
+
+.badge { display: inline-block; font-size: 12px; padding: 2px 10px; border-radius: 12px; color: white; margin: 4px 0 8px 0; }
+.badge.Want-to-Read { background: #3d5a80; }
+.badge.Reading { background: #0f8b8d; }
+.badge.Finished { background: #4a7c3a; }
+
+.bar { height: 12px; background: #dde6f0; border-radius: 6px; overflow: hidden; margin: 6px 0; }
+.fill { height: 100%; background: #0f8b8d; }

@@ -1,0 +1,17 @@
+{
+  "name": "imybook",
+  "version": "1.0.0",
+  "description": "iMyBook - Reading Book Application (Electron)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Muhammad Fawwaz Hakimi",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^45.0.0"
+  },
+  "allowScripts": {
+    "electron@33.4.11": true
+  }
+}
